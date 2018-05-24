@@ -12,10 +12,15 @@ public class Crime {
     private String mTitle;
     private Date mDate;
     private boolean mSolved;
-    private int mRequiresPolice;
+    private String mSuspect;
+//    private int mRequiresPolice;
 
     public Crime() {
-        mId = UUID.randomUUID();
+        this(UUID.randomUUID());
+    }
+
+    public Crime(UUID id) {
+        mId = id;
         mDate = new Date();
     }
 
@@ -47,11 +52,19 @@ public class Crime {
         mSolved = solved;
     }
 
-    public int getRequiresPolice() {
-        return mRequiresPolice;
+    public String getSuspect() {
+        return mSuspect;
     }
 
-    public void setRequiresPolice(int requiresPolice) {
-        mRequiresPolice = requiresPolice;
+    public void setSuspect(String suspect) {
+        mSuspect = suspect;
     }
+
+    //    public int getRequiresPolice() {
+//        return mRequiresPolice;
+//    }
+
+//    public void setRequiresPolice(int requiresPolice) {
+//        mRequiresPolice = requiresPolice;
+//    }
 }
