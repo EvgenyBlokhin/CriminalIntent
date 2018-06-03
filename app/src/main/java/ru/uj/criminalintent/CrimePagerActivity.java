@@ -28,10 +28,6 @@ public class CrimePagerActivity extends AppCompatActivity {
         return intent;
     }
 
-    public void removeToCrimeList() {
-        finish();
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

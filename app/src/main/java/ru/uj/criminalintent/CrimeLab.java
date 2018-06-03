@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -35,8 +36,8 @@ public class CrimeLab {
         mDatabase = new CrimeBaseHelper(mContext).getWritableDatabase();
     }
 
-    public void addCrime(Crime c) {
-        ContentValues values = getContentValues(c);
+    public void addCrime(Crime crime) {
+        ContentValues values = getContentValues(crime);
         mDatabase.insert(CrimeTable.NAME, null, values);
     }
 
@@ -99,7 +100,15 @@ public class CrimeLab {
         values.put(CrimeTable.Cols.DATE, crime.getDate().getTime());
         values.put(CrimeTable.Cols.SOLVED, crime.isSolved() ? 1 : 0);
         values.put(CrimeTable.Cols.SUSPECT, crime.getSuspect());
+        values.put(CrimeTable.Cols.NUMBER, crime.getNumberSuspect());
 
         return values;
+    }
+
+    public File getPhotoFile(Crime crime) {
+        File filesDir = mContext.getFilesDir();
+        return new File(filesDir,crime.getPhotoFilename());
+//        if (externalFilesDir == null) {
+//        }
     }
 }

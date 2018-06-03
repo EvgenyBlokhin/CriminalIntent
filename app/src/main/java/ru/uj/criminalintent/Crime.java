@@ -13,6 +13,7 @@ public class Crime {
     private Date mDate;
     private boolean mSolved;
     private String mSuspect;
+    private String mNumberSuspect;
 //    private int mRequiresPolice;
 
     public Crime() {
@@ -60,6 +61,17 @@ public class Crime {
         mSuspect = suspect;
     }
 
+    public String getNumberSuspect() {
+        return mNumberSuspect;
+    }
+
+    public void setNumberSuspect(String numberSuspect) {
+        mNumberSuspect = numberSuspect;
+    }
+
+    public  String getPhotoFilename() {
+        return "IMG_" + getId().toString() + ".jpg";
+    }
     //    public int getRequiresPolice() {
 //        return mRequiresPolice;
 //    }

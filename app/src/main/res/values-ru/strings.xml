@@ -18,6 +18,7 @@
     <string name="crime_report">%1$s! Преступление было обнаружено на %2$s. %3$s, и %4$s</string>
     <string name="crime_report_solved">Дело раскрыто</string>
     <string name="crime_report_unsolved">Дело не раскрыто</string>
+    <string name="crime_call">Звонок подозреваемому</string>
     <string name="crime_report_no_suspect">подозреваемого нет.</string>
     <string name="crime_report_suspect">подозреваемый %s</string>
     <string name="crime_report_subject">CriminalIntent отчет о преступлении</string>

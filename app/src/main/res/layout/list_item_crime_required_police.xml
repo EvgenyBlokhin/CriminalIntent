@@ -13,13 +13,13 @@
         android:id="@+id/crime_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Название преступления" />
+        android:text="@string/crime_name_crimes" />
 
     <TextView
         android:id="@+id/crime_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Дата преступления" />
+        android:text="@string/crime_date_crimes" />
 </LinearLayout>
 
     <LinearLayout
