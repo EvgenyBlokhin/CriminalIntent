@@ -23,6 +23,8 @@
     <string name="crime_report_suspect">подозреваемый %s</string>
     <string name="crime_report_subject">CriminalIntent отчет о преступлении</string>
     <string name="send_report">Отправить отчет о преступлении через</string>
+    <string name="crime_empty_list">Список пуст!</string>
+    <string name="crime_add_button">Добавить</string>
     <plurals name="subtitle_plural">
         <item quantity="zero">%1$d преступлений</item>
         <item quantity="one">%1$d преступление</item>

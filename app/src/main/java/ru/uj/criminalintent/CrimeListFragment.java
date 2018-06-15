@@ -14,7 +14,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
@@ -30,12 +32,21 @@ public class CrimeListFragment extends Fragment {
     private CrimeAdapter mAdapter;
     private ImageView mSolvedImageView;
     private boolean mSubtitleVisible;
+    private LinearLayout mLayoutIsEmpty;
+    private Button mButtonIsEmpty;
     private static final String SAVED_SUBTITLE_VISIBLE = "subtitle";
 
     @Override
     public void onResume() {
         super.onResume();
         updateUI();
+    }
+
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -89,16 +100,21 @@ public class CrimeListFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setHasOptionsMenu(true);
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_crime_list, container, false);
         mCrimeRecyclerView = view.findViewById(R.id.crime_recycler_view);
         mCrimeRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mLayoutIsEmpty = view.findViewById(R.id.empty_layout);
+        mButtonIsEmpty = view.findViewById(R.id.button_empty_list);
+        mButtonIsEmpty.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Crime crime = new Crime();
+                CrimeLab.get(getActivity()).addCrime(crime);
+                Intent intent = CrimePagerActivity.newIntent(getActivity(), crime.getId());
+                startActivity(intent);
+            }
+        });
 
         if (savedInstanceState != null) {
             mSubtitleVisible = savedInstanceState.getBoolean(SAVED_SUBTITLE_VISIBLE);
@@ -110,6 +126,7 @@ public class CrimeListFragment extends Fragment {
     private void updateUI() {
         CrimeLab crimeLab = CrimeLab.get(getActivity());
         List<Crime> crimes = crimeLab.getCrimes();
+        mLayoutIsEmpty.setVisibility(crimes.isEmpty() ? View.VISIBLE : View.GONE);
         if (mAdapter == null) {
             mAdapter = new CrimeAdapter(crimes);
             mCrimeRecyclerView.setAdapter(mAdapter);
@@ -145,8 +162,6 @@ public class CrimeListFragment extends Fragment {
 
         public CrimeHolder(LayoutInflater inflater, ViewGroup parent) {
             super(inflater.inflate(R.layout.list_item_crime, parent, false));
-
-
         }
 
         @SuppressLint("SimpleDateFormat")

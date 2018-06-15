@@ -23,6 +23,7 @@
                 android:layout_height="80dp"
                 android:scaleType="centerInside"
                 android:cropToPadding="true"
+                android:clickable="true"
                 android:background="@android:color/darker_gray"/>
 
             <ImageButton
