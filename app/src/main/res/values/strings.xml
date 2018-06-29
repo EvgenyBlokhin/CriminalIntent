@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">CriminalIntent</string>
     <string name="crime_title_hint">Enter the name of the crime.</string>
@@ -14,7 +15,7 @@
     <string name="delete_crime">Delete</string>
     <string name="crime_suspect_text">Choose Suspect</string>
     <string name="crime_report_text">Send Crime Report</string>
-    <string name="crime_report">%1$s! The crimes was discovered on %2$s. %3$s, and %4$s</string>
+    <string name="crime_report">%1$s! The crimes was discovered on %2$s. %3$s, and %4$s.</string>
     <string name="crime_report_solved">The case is solved</string>
     <string name="crime_call">Call to the suspect</string>
     <string name="crime_report_unsolved">The case is not solved</string>
@@ -24,6 +25,9 @@
     <string name="send_report">Send crime report via</string>
     <string name="crime_empty_list">Empty list!</string>
     <string name="crime_add_button">Add</string>
+    <string name="crime_photo_button_description">Take photo of crime scene</string>
+    <string name="crime_photo_no_image_description">Crime scene photo (not set)</string>
+    <string name="crime_photo_image_description">Crime scene photo (set)</string>
     <plurals name="subtitle_plural">
         <item quantity="one">%1$d crime</item>
         <item quantity="other">%1$d crimes</item>

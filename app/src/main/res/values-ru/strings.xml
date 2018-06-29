@@ -15,7 +15,7 @@
     <string name="delete_crime">Удалить</string>
     <string name="crime_suspect_text">Выбор подозреваемого</string>
     <string name="crime_report_text">Отправить отчет о преступлении</string>
-    <string name="crime_report">%1$s! Преступление было обнаружено на %2$s. %3$s, и %4$s</string>
+    <string name="crime_report">%1$s! Преступление было обнаружено на %2$s. %3$s, и %4$s.</string>
     <string name="crime_report_solved">Дело раскрыто</string>
     <string name="crime_report_unsolved">Дело не раскрыто</string>
     <string name="crime_call">Звонок подозреваемому</string>
@@ -33,4 +33,7 @@
         <item quantity="many">%1$d преступлений</item>
         <item quantity="other">%1$d преступления</item>
     </plurals>
+    <string name="crime_photo_button_description">Сфотографируйте место преступления</string>
+    <string name="crime_photo_no_image_description">Фото с места преступления (не установлено)</string>
+    <string name="crime_photo_image_description">Фото с места преступления (установлено)</string>
 </resources>
