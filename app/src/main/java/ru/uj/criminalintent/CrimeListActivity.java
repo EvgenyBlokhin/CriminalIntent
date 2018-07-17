@@ -25,8 +25,8 @@ public class CrimeListActivity extends SingleFragmentActivity implements CrimeLi
             Intent intent = CrimePagerActivity.newIntent(this, crime.getId());
             startActivity(intent);
         } else {
-            Fragment newDetal = CrimeFragment.newInstance(crime.getId());
-            getSupportFragmentManager().beginTransaction().replace(R.id.delail_fragment_container, newDetal).commit();
+            Fragment newDetail = CrimeFragment.newInstance(crime.getId());
+            getSupportFragmentManager().beginTransaction().replace(R.id.delail_fragment_container, newDetail).commit();
         }
     }
 
