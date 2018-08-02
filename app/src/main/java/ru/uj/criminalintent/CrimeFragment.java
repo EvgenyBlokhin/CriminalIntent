@@ -339,8 +339,6 @@ public class CrimeFragment extends Fragment {
             solvedString = getString(R.string.crime_report_unsolved);
         }
 
-//        String dateFormat = "EEE, MMM dd";
-//        String dateString = DateFormat.format(dateFormat, mCrime.getDate()).toString();
         String dateString = java.text.DateFormat.getDateInstance().format(mCrime.getDate());
 
         String suspect = mCrime.getSuspect();

@@ -197,29 +197,6 @@ public class CrimeListFragment extends Fragment {
         }
     }
 
-//    private class CrimeHolderRequiresPolice extends BaseHolder {      // Держатель с кнопкой вызова полиции
-//
-//        private Button mButtonRequiredPolice;
-//
-//        public CrimeHolderRequiresPolice(LayoutInflater inflater, ViewGroup parent) {
-//            super(inflater.inflate(R.layout.list_item_crime_required_police, parent, false));
-//
-//            mButtonRequiredPolice = itemView.findViewById(R.id.button_required_police);
-//        }
-//
-//        @Override
-//        public void bind(Crime crime) {
-//            mCrime = crime;
-//            mTitleTextView.setText(mCrime.getTitle());
-//            mDateTextView.setText(mCrime.getDate().toString());
-//        }
-//
-//        @Override
-//        public void onClick(View View) {
-//            Intent intent = CrimeActivity.newIntent(getActivity(), mCrime.getId());
-//            startActivity(intent);
-//        }
-//    }
 
     private class CrimeAdapter extends RecyclerView.Adapter<BaseHolder> {
 
@@ -233,11 +210,6 @@ public class CrimeListFragment extends Fragment {
         @Override
         public BaseHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
-//            if (viewType == 1) {                                                  // Заготовка под держатель с кнопкой
-//                return new CrimeHolderRequiresPolice(layoutInflater, parent);
-//            } else {
-//                return new CrimeHolder(layoutInflater, parent);
-//            }
             return new CrimeHolder(layoutInflater, parent);
         }
 
@@ -256,16 +228,6 @@ public class CrimeListFragment extends Fragment {
             mCrimes = crimes;
         }
 
-//        @Override
-//        public int getItemViewType(int position) {                                   // Заготовка под держатель с кнопкой
-//            if (position % 2 == 0) {
-//                mCrimes.get(position).setRequiresPolice(1);
-//                return mCrimes.get(position).getRequiresPolice();
-//            } else {
-//                mCrimes.get(position).setRequiresPolice(2);
-//                return mCrimes.get(position).getRequiresPolice();
-//            }
-//        }
     }
 
     private void setSwipeForRecyclerView() {
