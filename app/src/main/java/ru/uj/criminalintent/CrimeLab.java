@@ -108,7 +108,5 @@ public class CrimeLab {
     public File getPhotoFile(Crime crime) {
         File filesDir = mContext.getFilesDir();
         return new File(filesDir,crime.getPhotoFilename());
-//        if (externalFilesDir == null) {
-//        }
     }
 }
